@@ -43,6 +43,7 @@ console.log('Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome))
             console.log(`Fontes com B1: ${tiamina_B1}`);
         }
     }
+    //console.log(vitaminas[0].fontes);
     
     for (let b2 of vitaminas) {
         if (b2.nome === 'B2') {
@@ -50,13 +51,15 @@ console.log('Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome))
             console.log(`Fontes com B2: ${B2}`);
         }
     }
-    
+    //console.log(vitaminas[1].fontes);
+
     for (let b3 of vitaminas) {
         if (b3.nome === 'B3 (Niacina)') {
             var B3_Niacina = b3.fontes
             console.log(`Fontes com B3: ${B3_Niacina}`);
         }
     }
+    //console.log(vitaminas[2].fontes);
     
     for (let b5 of vitaminas) {
         if (b5.nome === 'B5 (Ácido Pantotênico)') {
@@ -64,6 +67,7 @@ console.log('Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome))
             console.log(`Fontes com B5: ${B5_acidoPantotenico}`);
         }
     }
+    //console.log(vitaminas[3].fontes);
     
     for (let b6 of vitaminas) {
         if (b6.nome === 'B6') {
@@ -71,13 +75,17 @@ console.log('Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome))
             console.log(`Fontes com B6: ${B6}`);
         }
     }
-    
+    //console.log(vitaminas[4].fontes);
+
     for (let b9 of vitaminas) {
         if (b9.nome === 'B9 (Ácido Fólico)') {
             var B9_acidoFolico = b9.fontes
             console.log(`Fontes com B9: ${B9_acidoFolico}`);
         }
     }
+    //console.log(vitaminas[5].fontes);
     
     let todasFontes = vitaminas.map(alimento => alimento.fontes);
     console.log(`Todas as fontes listadas: ${todasFontes}`);
+
+
