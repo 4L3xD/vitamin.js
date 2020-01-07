@@ -43,7 +43,10 @@ console.log(`
    ${'Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome)}`
 );
 
+fonteVitaminas = new Map();
+
 let tiamina_B1, B2, B3_Niacina, B5_acidoPantotenico, B6, B9_acidoFolico; 
+
 for (let vitamina of vitaminas) {
     if (vitamina.nome === 'B1 (Tiamina)') {
         tiamina_B1 = vitamina.fontes;
@@ -72,9 +75,9 @@ for (let vitamina of vitaminas) {
 }
 
 console.log(`
-        _   _
+         _   _
         (.)_(.)
-    _ (   _   ) _
+     _ (   _   ) _
 `);    
 
 let todasFontes = vitaminas.map(alimento => alimento.fontes);
@@ -83,14 +86,16 @@ console.log(`Todas as fontes listadas: ${todasFontes}`);
 // Tratar as fontes iguais que contém mais de uma vitamina de modo que as fontes não apareçam repetidas na exibição de 'todasFontes'
 fontesVitaminas = tiamina_B1.concat(B2, B3_Niacina, B5_acidoPantotenico, B6, B9_acidoFolico);
 
-fonteVitaminas = new Map();
 
-for (i = todasFontes.length; i >= 0; i--) {
-    for (fonte of fontesVitaminas) {
-        for (x = 0; x <= tiamina_B1.length; x++) {
-            fonteVitB1 = fonteVitaminas.set(fonte, 'B1 (Tiamina)');
-        }
+fontesVitaminas = new Map();
+for (let vitamina of vitaminas) {
+  for (let fonte of vitamina.fontes) {
+    if(!fontesVitaminas.get(fonte)) {
+      fontesVitaminas.set(fonte, [vitamina.nome]);
     }
+    else {
+      fontesVitaminas.get(fonte).push(vitamina.nome);
+    }
+  }
 }
-console.log(fonteVitB1);
-return fonte, fontesVitaminas[x], fonteVitB1;
+console.log(fontesVitaminas);
