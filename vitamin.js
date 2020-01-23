@@ -26,24 +26,11 @@ let vitaminas = [
 
     { nome: 'B9 (Ácido Fólico)',
     fontes: ["levedo de cerveja","lentilhas", "quiabo cozido", "feijão preto", "espinafre", "amendoim", "macarrão", "brocólis cozido", "beterraba", "suco de laranja", "arroz branco"],
-    observacao: 'Estimula a formação de células do sangue e prevene alterações no DNA das células'
+    observacao: 'Estimula a formação de células do sangue e previne alterações no DNA das células'
     }
 ];
-console.log(`
-        ,,,                      ,,,
-       {{{}}    ,,,             {{{}}    ,,,
-    ,,, ~Y~    {{{}},,,      ,,, ~Y~    {{{}},,, 
-   {{}}} |/,,,  ~Y~{{}}}    {{}}} |/,,,  ~Y~{{}}}
-    ~Y~ \|{{}}}/\|/ ~Y~  ,,, ~Y~ \|{{}}}/\|/ ~Y~  ,,,
-    \|/ \|/~Y~  \|,,,|/ {{}}}\|/ \|/~Y~  \|,,,|/ {{}}}
-    \|/ \|/\|/  \{{{}}/  ~Y~ \|/ \|/\|/  \{{{}}/  ~Y~
-    \|/\\|/\|/ \\|~Y~//  \|/ \|/\\|/\|/ \\|~Y~//  \|/
-    \|//\|/\|/,\\|/|/|// \|/ \|//\|/\|/,\\|/|/|// \|/
-   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   ${'Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome)}`
-);
+console.log(`${'Vitaminas: ' + vitaminas.map(vitamina => vitamina.nome)}`);
 
-fonteVitaminas = new Map();
 
 let tiamina_B1, B2, B3_Niacina, B5_acidoPantotenico, B6, B9_acidoFolico; 
 
@@ -74,17 +61,13 @@ for (let vitamina of vitaminas) {
     }
 }
 
-console.log(`
-         _   _
-        (.)_(.)
-     _ (   _   ) _
-`);    
 
 let todasFontes = vitaminas.map(alimento => alimento.fontes);
 console.log(`Todas as fontes listadas: ${todasFontes}`);
      
 // Tratar as fontes iguais que contém mais de uma vitamina de modo que as fontes não apareçam repetidas na exibição de 'todasFontes'
-fontesVitaminas = tiamina_B1.concat(B2, B3_Niacina, B5_acidoPantotenico, B6, B9_acidoFolico);
+
+//fontesVit = tiamina_B1.concat(B2, B3_Niacina, B5_acidoPantotenico, B6, B9_acidoFolico);
 
 
 fontesVitaminas = new Map();
